@@ -10,6 +10,7 @@ data = [data1, data2, data3, data4, data5]
 text = ["Cash1.txt", "Cash2.txt", "Cash3.txt", "Cash4.txt", "Cash5.txt"]
 
 def openf(txt_files):
+    # сканировали файлы и записали данные
     datas1 = []
     datas2 = []
     datas3 = []
@@ -25,6 +26,7 @@ def openf(txt_files):
                     data[i].append(datas[i][j][k])
 
 def find_max():
+    # нашли максимальое значение и вывели его индекс + 1, что будет равно искомому интервалу с наибольшим количеством посетителей
     final = []
     for i in range(len(data1)):
         final.append(data1[i] + data2[i] + data2[i] + data2[i] + data2[i])
@@ -35,6 +37,8 @@ def find_max():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
+        # переходим в дирректорию с файлами
         os.chdir(sys.argv[1])
+        # с помощью функций обрабатываем файлы и находим ответ на поставленную задачу
         openf(text)
         find_max()
